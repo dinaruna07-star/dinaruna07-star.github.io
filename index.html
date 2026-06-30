@@ -3,18 +3,6 @@
 // 카카오톡 인앱 브라우저면 자동으로 외부 브라우저(크롬 등)로 열기
 (function(){var ua=navigator.userAgent||"";
  if(/KAKAOTALK/i.test(ua)){location.href='kakaotalk://web/openExternal?url='+encodeURIComponent(location.href);}})();
-// 네이버시세: 네이버앱 있으면 앱으로, 없으면 웹페이지로
-function openNaver(q){
- var web='https://m.search.naver.com/search.naver?query='+encodeURIComponent(q+' 매매 시세');
- var ua=navigator.userAgent||'';
- if(/android/i.test(ua)){
-   location.href='intent://search?query='+encodeURIComponent(q)+'&where=nexearch#Intent;scheme=naversearchapp;package=com.nhn.android.search;S.browser_fallback_url='+encodeURIComponent(web)+';end';
- } else if(/iphone|ipad|ipod/i.test(ua)){
-   var t=Date.now();
-   location.href='naversearchapp://search?query='+encodeURIComponent(q)+'&where=nexearch&version=6';
-   setTimeout(function(){if(Date.now()-t<2000)location.href=web;},1500);
- } else { location.href=web; }
-}
 </script>
 <style>body{font-family:'맑은 고딕',sans-serif;background:#f4f5f7;margin:0;padding:16px;color:#222}
 .ext{display:block;background:#111;color:#fff;text-align:center;padding:10px;border-radius:8px;text-decoration:none;font-weight:700;margin-bottom:10px}
@@ -45,7 +33,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울남부지방법원 경매5계 02-2192-1933</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 159.91㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%8B%A0%EA%B8%B8%EB%8F%99%20%EC%8B%A0%EA%B8%B8%EB%A6%AC%EB%B2%84%EC%8A%A4%EC%8B%9C%ED%8B%B0" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 영등포구 신길동 신길리버스시티');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%8B%A0%EA%B8%B8%EB%A6%AC%EB%B2%84%EC%8A%A4%EC%8B%9C%ED%8B%B0" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 <div class=warn>⚠️ 유찰 많음 = 싸진 이유(선순위 임차인·지분·분쟁 등) 가능. 등기부·매각물건명세서 필수 확인!</div></div>
 <div class=c>
@@ -66,7 +54,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매2계 2204-2406(구내:2406)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조  49.06㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EB%AC%B8%EC%A0%95%EB%8F%99%20%EC%86%A1%ED%8C%8C%EB%B2%95%EC%A1%B0%ED%83%80%EC%9A%B4%ED%91%B8%EB%A5%B4%EC%A7%80%EC%98%A4%EC%8B%9C%ED%8B%B0" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 문정동 송파법조타운푸르지오시티');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%86%A1%ED%8C%8C%EB%B2%95%EC%A1%B0%ED%83%80%EC%9A%B4%ED%91%B8%EB%A5%B4%EC%A7%80%EC%98%A4%EC%8B%9C%ED%8B%B0" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 <div class=warn>⚠️ 유찰 많음 = 싸진 이유(선순위 임차인·지분·분쟁 등) 가능. 등기부·매각물건명세서 필수 확인!</div></div>
 <div class=c>
@@ -87,7 +75,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매21계 530-1822(제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 오피스텔 23.18㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 강남구 역삼동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -108,7 +96,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울서부지방법원 경매8계 02-3271-1328</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트조 47.71㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EB%AC%B8%EB%B0%B0%EB%8F%99%20%EC%9A%A9%EC%82%B0%EC%94%A8%EC%A0%9C%EC%9D%B4%EB%82%98%EC%9D%B8%ED%8C%8C%ED%81%AC" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 용산구 문배동 용산씨제이나인파크');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%9A%A9%EC%82%B0%EC%94%A8%EC%A0%9C%EC%9D%B4%EB%82%98%EC%9D%B8%ED%8C%8C%ED%81%AC" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -129,7 +117,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매21계 530-1822(제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 39.29㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%96%91%EC%9E%AC%EB%8F%99%20%ED%95%98%EC%9D%B4%EB%B8%8C%EB%9E%9C%EB%93%9C" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 서초구 양재동 하이브랜드');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%ED%95%98%EC%9D%B4%EB%B8%8C%EB%9E%9C%EB%93%9C" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -150,7 +138,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울남부지방법원 경매9계 (02)2192-1339(구내:1339)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 69.4㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%98%81%EB%93%B1%ED%8F%AC%EB%8F%992%EA%B0%80%20%EB%9D%BC%EC%9B%80%EB%B9%8C" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 영등포구 영등포동2가 라움빌');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EB%9D%BC%EC%9B%80%EB%B9%8C" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -171,7 +159,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매12계 3485-3244</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 63.13㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%99%20%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%8A%A4%ED%86%A4%EC%84%9C%EC%B4%88" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 서초구 서초동 브라운스톤서초');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%8A%A4%ED%86%A4%EC%84%9C%EC%B4%88" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -192,7 +180,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매1계 530-1820 (제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [토지 대 858.7㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%85%BC%ED%98%84%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 강남구 논현동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%85%BC%ED%98%84%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -213,7 +201,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매8계 530-1818(제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트조 44.64㎡ (대중음식점)]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%96%91%EC%9E%AC%EB%8F%99%20%ED%8A%B8%EC%9C%88%ED%83%80%EC%9B%8C%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 서초구 양재동 트윈타워오피스텔');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%ED%8A%B8%EC%9C%88%ED%83%80%EC%9B%8C%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -234,7 +222,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매1계 530-1820 (제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 32.18㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8C%80%EC%B9%98%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 강남구 대치동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8C%80%EC%B9%98%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -255,7 +243,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매1계 530-1820 (제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [토지 대 146.2㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%A9%EB%B0%B0%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 서초구 방배동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%A9%EB%B0%B0%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -276,7 +264,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울중앙지방법원 경매1계 530-1820 (제4별관 민사집행과)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 15.19㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20%EC%8B%A0%EB%85%BC%ED%98%84%EB%A7%88%EC%97%90%EC%8A%A4%ED%8A%B8%EB%A1%9C" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 강남구 역삼동 신논현마에스트로');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%8B%A0%EB%85%BC%ED%98%84%EB%A7%88%EC%97%90%EC%8A%A4%ED%8A%B8%EB%A1%9C" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -297,7 +285,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매3계 02-2204-2407(구내:2407)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트조 92.48㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%98%A4%EA%B8%88%EB%8F%99%20%EC%84%BC%ED%8A%B8%EB%9F%B4%EC%98%A4%EA%B8%88" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 오금동 센트럴오금');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%BC%ED%8A%B8%EB%9F%B4%EC%98%A4%EA%B8%88" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -318,7 +306,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매3계 02-2204-2407(구내:2407)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 23.18㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%B1%EB%8F%99%EA%B5%AC%20%EC%84%B1%EC%88%98%EB%8F%992%EA%B0%80%20%EC%84%9C%EC%9A%B8%EC%88%B2%EC%BD%94%EB%A6%AC%EC%95%84%EC%95%84%EC%9D%B4%ED%8B%B0%EC%84%BC%ED%84%B0" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 성동구 성수동2가 서울숲코리아아이티센터');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%EC%88%B2%EC%BD%94%EB%A6%AC%EC%95%84%EC%95%84%EC%9D%B4%ED%8B%B0%EC%84%BC%ED%84%B0" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -339,7 +327,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매3계 02-2204-2407(구내:2407)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 31.3㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%86%A1%ED%8C%8C%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 송파동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%86%A1%ED%8C%8C%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -360,7 +348,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매3계 02-2204-2407(구내:2407)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 39.999㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EB%AC%B8%EC%A0%95%EB%8F%99%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A42" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 문정동 파트너스2');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A42" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -381,7 +369,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매2계 2204-2406(구내:2406)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트조 76.80㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%9E%A0%EC%8B%A4%EB%8F%99%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 잠실동 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%9E%A0%EC%8B%A4%EB%8F%99" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -402,7 +390,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매2계 2204-2406(구내:2406)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 22.68 ㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EB%AC%B8%EC%A0%95%EB%8F%99%20%EA%B0%80%EB%93%A0%ED%8C%8C%EC%9D%B4%EB%B8%8C%EB%9D%BC%EC%9D%B4%ED%94%84" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 문정동 가든파이브라이프');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EA%B0%80%EB%93%A0%ED%8C%8C%EC%9D%B4%EB%B8%8C%EB%9D%BC%EC%9D%B4%ED%94%84" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -423,7 +411,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매2계 2204-2406(구내:2406)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 44.451㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EA%B1%B0%EC%97%AC%EB%8F%99%20%EC%86%A1%ED%8C%8C%ED%97%A4%EB%B8%90%EC%8B%9C%ED%8B%B0%EB%8D%94%ED%85%8C%EB%9D%BC%EC%8A%A4" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 거여동 송파헤븐시티더테라스');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%86%A1%ED%8C%8C%ED%97%A4%EB%B8%90%EC%8B%9C%ED%8B%B0%EB%8D%94%ED%85%8C%EB%9D%BC%EC%8A%A4" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -444,7 +432,7 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울동부지방법원 경매2계 2204-2406(구내:2406)</span></div>
 <div style="font-size:13px;color:#555">📋 [토지 대 184.6㎡ 공유자지분 중 100분의 15 최선웅 지분]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EA%B1%B0%EC%97%AC%EB%8F%99%20%EA%B3%B5%EC%9C%A0%EC%9E%90%EC%A7%80%EB%B6%84%20%EC%A4%91%20100%EB%B6%84%EC%9D%98%2015%20%EC%B5%9C%EC%84%A0%EC%9B%85%20%EC%A7%80%EB%B6%84%20" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 송파구 거여동 공유자지분 중 100분의 15 최선웅 지분 ');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EA%B1%B0%EC%97%AC%EB%8F%99%20%EA%B3%B5%EC%9C%A0%EC%9E%90%EC%A7%80%EB%B6%84%20%EC%A4%91%20100%EB%B6%84%EC%9D%98%2015%20%EC%B5%9C%EC%84%A0%EC%9B%85%20%EC%A7%80%EB%B6%84" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
 <div class=c>
@@ -465,6 +453,6 @@ a.btn.g{background:#16a34a}a.btn.o{background:#ea580c}.warn{color:#b00020;font-s
 <span><span class=k>담당</span><br>서울남부지방법원 경매2계 (02)2192-1332(구내:1332)</span></div>
 <div style="font-size:13px;color:#555">📋 [집합건물 철근콘크리트구조 24.68㎡]</div>
 <a class=btn href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EB%8C%80%EB%A6%BC%EB%8F%99%20%ED%8C%8C%ED%81%AC%EC%97%90%EB%B9%84%EB%89%B4" target=_blank>📍 지도에서 보기</a>
-<a class="btn g" href="#" onclick="openNaver('서울특별시 영등포구 대림동 파크에비뉴');return false;">💰 네이버 시세 검색</a>
+<a class="btn g" href="https://m.land.naver.com/search/result/%ED%8C%8C%ED%81%AC%EC%97%90%EB%B9%84%EB%89%B4" target=_blank>💰 네이버부동산 시세</a>
 <a class="btn o" href="https://rt.molit.go.kr" target=_blank>📊 실거래가 조회</a>
 </div>
