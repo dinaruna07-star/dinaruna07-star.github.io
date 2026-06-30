@@ -1,0 +1,7 @@
+<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<h3>지도 테스트</h3>
+<div class=kmap data-q="강남구 역삼동 신논현마에스트로" style="height:240px;background:#eee">로딩중</div>
+<div class=kmap data-q="서울특별시 송파구 문정동" style="height:240px;background:#eee">로딩중</div>
+<div class=kmap data-q="성남시 분당구 정자동" style="height:240px;background:#eee">로딩중</div>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3b116f1b49eef90589dd0cce729988bd&autoload=false&libraries=services" onerror="window._kfail=1"></script>
+<script>function _fb(el){el.innerHTML="못찾음";}setTimeout(function(){if(window._kfail||typeof kakao==="undefined"){document.querySelectorAll(".kmap").forEach(_fb);return;}kakao.maps.load(function(){var ps=new kakao.maps.services.Places();document.querySelectorAll(".kmap").forEach(function(el){ps.keywordSearch(el.dataset.q,function(data,status){if(status===kakao.maps.services.Status.OK&&data.length){el.innerHTML="";var pos=new kakao.maps.LatLng(data[0].y,data[0].x);var m=new kakao.maps.Map(el,{center:pos,level:3});new kakao.maps.Marker({position:pos,map:m});el.setAttribute("data-found",data[0].place_name+"|"+data[0].y+","+data[0].x);}else{_fb(el);el.setAttribute("data-found","NONE:"+status);}});});});},700);</script>
